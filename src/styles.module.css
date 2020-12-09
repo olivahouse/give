@@ -1,0 +1,165 @@
+.viewport {
+  color: #fff;
+  display: flex;
+  height: 100vh;
+}
+
+.leftPane, .rightPane {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.leftPane {
+  display: none;
+}
+
+@media screen and (min-width: 901px) {
+  .leftPane {
+    background: #fff;
+    display: flex;
+    flex-basis: 50%;
+    flex-shrink: 0;
+  }
+}
+
+.rightPane {
+  flex-grow: 1;
+}
+
+@media screen and (min-width: 901px) {
+  .rightPane .quote,
+  .rightPane .homeLink {
+    display: none;
+  }
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  margin: 0 auto;
+  max-width: 400px;
+  width: 90%;
+}
+
+.testBanner {
+  position: fixed;
+  background: red;
+  color: white;
+  padding: 48px 80px 24px;
+  top: -10px;
+  right: -90px;
+  transform: rotate(45deg);
+}
+
+.success {
+  padding: 48px;
+  text-align: center;
+}
+
+.viewport a {
+  margin: 0 0 36px;
+  text-align: center;
+}
+
+.success img {
+  margin-bottom: 48px;
+  width: 100%;
+}
+
+.verticalSpacer {
+  flex-shrink: 0;
+  height: 16px;
+  width: 100%;
+}
+
+.list > div {
+  display: flex;
+  margin-bottom: 16px;
+}
+
+.list > div > h2 {
+  flex-basis: 36px;
+  flex-shrink: 0;
+  font-family: 'DM Serif Display', serif;
+  font-size: 48px;
+  line-height: 48px;
+  margin: 0 16px 0 0;
+  opacity: 0.6;
+  text-align: center;
+}
+
+.list > div > p {
+  align-self: center;
+  font-size: 14px;
+  margin: 0;
+}
+
+.viewport button {
+  background-color: transparent;
+  border-color: #fff;
+  color: #fff;
+  margin: 8px auto 24px;
+}
+
+.viewport button:hover {
+  background-color: rgba(0,0,0,0.2);
+}
+
+@media screen and (min-width: 901px) {
+  .viewport button {
+    margin: 48px auto;
+  }
+}
+
+.quote {
+  padding: 8px;
+  width: 100%;
+}
+
+.bubble {
+  background: #fff;
+  box-shadow: 0 6px 30px 6px rgba(0,0,0,.08);
+  color: #20333a;
+  padding: 16px;
+  position: relative;
+  width: 80%;
+}
+
+.bubble:after {
+  background: #fff;
+  bottom: 0px;
+  content: "";
+  height: 20px;
+  position: absolute;
+  right: 50px;
+  transform: rotate(45deg);
+  transform-origin: bottom left;
+  width: 20px;
+}
+
+.quoteText {
+  font-family: 'DM Serif Display', serif;
+  margin-bottom: 16px;
+}
+
+.quoteName, .quoteTitle {
+  font-size: 12px;
+}
+
+.quoteName {
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+.avatar {
+  padding: 16px;
+  text-align: right;
+}
+
+.avatar img {
+  border-radius: 50%;
+  box-shadow: 0 6px 30px 6px rgba(0,0,0,.08);
+  height: auto;
+  width: 80px;
+}

@@ -1,4 +1,4 @@
-import { Fragment } from 'react';
+import { Fragment, useState } from 'react';
 import { Button, Paragraph } from '@olivahouse/ui';
 import { loadStripe } from '@stripe/stripe-js';
 import { parse } from 'query-string';
@@ -24,8 +24,10 @@ const stripePromise = loadStripe(STRIPE_PUBLC_API_KEY);
 const { result } = parse(window.location.search);
 
 const App = () => {
+  const [isLoading, setIsLoading] = useState(false);
 
   const handleClick = async (event) => {
+    setIsLoading(true);
     // When the customer clicks on the button, redirect them to Checkout.
     const stripe = await stripePromise;
     const { error } = await stripe.redirectToCheckout({
@@ -40,6 +42,9 @@ const App = () => {
     // If `redirectToCheckout` fails due to a browser or network
     // error, display the localized error message to your customer
     // using `error.message`.
+    if (error) {
+      setIsLoading(false);
+    }
   };
 
   return (
@@ -92,7 +97,7 @@ const App = () => {
                   </div>
                 </div>
                 <Quote />
-                <Button role="link" onClick={handleClick}>
+                <Button isLoading={isLoading} role="link" onClick={handleClick}>
                   Gift 3 therapy sessions for £200
                 </Button>
               </Fragment>

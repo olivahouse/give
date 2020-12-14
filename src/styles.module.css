@@ -4,30 +4,32 @@
   height: 100vh;
 }
 
-.leftPane, .rightPane {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 .leftPane {
   display: none;
 }
 
 @media screen and (min-width: 901px) {
   .leftPane {
+    align-items: center;
     background: #fff;
     display: flex;
     flex-basis: 50%;
     flex-shrink: 0;
+    justify-content: center;
   }
 }
 
 .rightPane {
+  display: flex;
   flex-grow: 1;
+  justify-content: center;
 }
 
 @media screen and (min-width: 901px) {
+  .rightPane {
+    align-items: center;
+  }
+
   .rightPane .quote,
   .rightPane .homeLink {
     display: none;
@@ -121,9 +123,15 @@
   background: #fff;
   box-shadow: 0 6px 30px 6px rgba(0,0,0,.08);
   color: #20333a;
-  padding: 16px;
+  padding: 12px 16px;
   position: relative;
   width: 80%;
+}
+
+@media screen and (min-width: 901px) {
+  .bubble {
+    padding: 24px;
+  }
 }
 
 .bubble:after {
@@ -136,6 +144,12 @@
   transform: rotate(45deg);
   transform-origin: bottom left;
   width: 20px;
+}
+
+@media screen and (min-width: 901px) {
+  .bubble:after {
+    right: 80px;
+  }
 }
 
 .quoteText {
@@ -154,6 +168,7 @@
 
 .avatar {
   padding: 16px;
+  padding-bottom: 0;
   text-align: right;
 }
 
@@ -162,4 +177,139 @@
   box-shadow: 0 6px 30px 6px rgba(0,0,0,.08);
   height: auto;
   width: 80px;
+}
+
+@media screen and (min-width: 901px) {
+  .avatar img {
+    width: 100px;
+  }
+}
+
+.checkbox {
+  align-items: center;
+  display: flex;
+  margin-bottom: 8px;
+  position: relative;
+}
+
+.checkbox p {
+  margin: 0;
+  margin-left: 8px;
+}
+
+.checkbox .tooltip p {
+  margin: 0;
+  margin-bottom: 8px;
+  text-align: left;
+}
+
+@media screen and (min-width: 901px) {
+  .checkbox {
+    margin: 20px auto 0;
+  }
+}
+
+.errorMessage {
+  background: #d85d44;
+  border-radius: 1px;
+  bottom: 24px;
+  box-shadow: 0 6px 30px 6px rgba(0,0,0,.08);
+  color: #fff;
+  padding: 4px 8px;
+  position: absolute;
+}
+
+.errorMessage:after {
+  background: #d85d44;
+  bottom: -4px;
+  content: "";
+  height: 8px;
+  left: 8px;
+  position: absolute;
+  transform: rotate(45deg);
+  width: 8px;
+}
+
+
+/*----------------------------*/
+/*   Tooltip                  */
+/*----------------------------*/
+
+.tooltip {
+  line-height: 1rem;
+  position: relative;
+  text-align: center;
+  z-index: 1;
+}
+
+.tooltipOverlay {
+  align-items: center;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,.1);
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  right: 50%;
+  position: absolute;
+  top: 1rem;
+  transform: translateX(50%);
+  transition: opacity 0.2s ease-in;
+  margin-top: 12px;
+  width: 200px;
+}
+
+.tooltip.isAbove .tooltipOverlay {
+  bottom: 2rem;
+  top: auto;
+}
+
+.tooltipArrow {
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: auto;
+  width: .5rem;
+  height: .5rem;
+  margin-right: auto;
+  margin-left: auto;
+  flex: 0 0 auto;
+  background-color: #fff;
+  transform: rotate(45deg);
+}
+
+.tooltip.isAbove .tooltipArrow {
+  bottom: -5px;
+  top: auto;
+}
+
+.tooltipContent {
+  align-items: center;
+  background-color: #fff;
+  border-radius: .125rem;
+  color: #20333a;
+  display: block;
+  flex: 0 0 auto;
+  font-size: .875rem;
+  height: auto;
+  justify-content: center;
+  line-height: 1.4rem;
+  max-width: 33ch;
+  padding: 8px 12px;
+  position: relative;
+  text-align: center;
+  top: .125rem;
+}
+
+.tooltip a {
+  border-bottom: 1px dotted #f0ae1c;
+  color: #e6774d;
+  cursor: default;
+  font-weight: 400;
+  letter-spacing: 0;
+  margin: 0 auto;
+  user-select: none;
+}
+
+.tooltip:hover .tooltipOverlay  {
+  display: block;
 }

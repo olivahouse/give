@@ -44,6 +44,12 @@
   width: 90%;
 }
 
+.heading {
+  font-family: 'DM Serif Display', serif;
+  font-size: 28px;
+  margin: -12px 0 12px;
+}
+
 .testBanner {
   position: fixed;
   background: red;
@@ -75,6 +81,10 @@
   width: 100%;
 }
 
+.list {
+  margin-bottom: 24px;
+}
+
 .list > div {
   display: flex;
   margin-bottom: 16px;
@@ -102,6 +112,7 @@
   border-color: #fff;
   color: #fff;
   margin: 8px auto 24px;
+  flex-shrink: 0;
 }
 
 .viewport button:hover {
@@ -111,11 +122,12 @@
 @media screen and (min-width: 901px) {
   .viewport button {
     margin: 48px auto;
+    padding: 16px 24px;
   }
 }
 
 .quote {
-  padding: 8px;
+  padding: 8px 8px 0;
   width: 100%;
 }
 
@@ -138,12 +150,12 @@
   background: #fff;
   bottom: 0px;
   content: "";
-  height: 20px;
+  height: 15px;
   position: absolute;
-  right: 50px;
+  right: 15px;
   transform: rotate(45deg);
   transform-origin: bottom left;
-  width: 20px;
+  width: 15px;
 }
 
 @media screen and (min-width: 901px) {

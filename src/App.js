@@ -87,7 +87,8 @@ const App = () => {
               </Fragment>
             : <Fragment>
                 <div className={styles.verticalSpacer}/>
-                <Paragraph>Here's how it works</Paragraph>
+                <Quote />
+                <h2 className={styles.heading}>How it works:</h2>
                 <div className={styles.list}>
                   <div>
                     <h2>1</h2>
@@ -108,7 +109,6 @@ const App = () => {
                     <Paragraph>Processing 2020 becomes much easier.</Paragraph>
                   </div>
                 </div>
-                <Quote />
                 <div className={styles.checkbox}>
                   <input name="legal" type="checkbox" checked={isChecked} onChange={handleChangeCheckbox} />
                   <SmallPrint>

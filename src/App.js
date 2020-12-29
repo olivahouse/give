@@ -87,48 +87,55 @@ const App = () => {
               </Fragment>
             : <Fragment>
                 <div className={styles.verticalSpacer}/>
-                <Quote />
-                <h2 className={styles.heading}>How it works:</h2>
-                <div className={styles.list}>
-                  <div>
-                    <h2>1</h2>
-                    <Paragraph>We'll send you a beautiful, festive gift card with a unique code. You can print or forward it to your friend or loved one.</Paragraph>
-                  </div>
-                  <div>
-                    <h2>2</h2>
-                    <Paragraph>
-                      They can use the code to book their first session from January 1st. They'll start with a{' '}
-                      <Tooltip content="The goal of the matching session is to find your friend the right therapist">
-                        matching session
-                      </Tooltip>
-                      , then they'll have two one-hour therapy sessions via video call.
-                    </Paragraph>
-                  </div>
-                  <div>
-                    <h2>3</h2>
-                    <Paragraph>Processing 2020 becomes much easier.</Paragraph>
-                  </div>
-                </div>
-                <div className={styles.checkbox}>
-                  <input name="legal" type="checkbox" checked={isChecked} onChange={handleChangeCheckbox} />
-                  <SmallPrint>
-                    I agree to the{' '}
-                    <Tooltip content={
-                      <Fragment>
-                        <SmallPrint>Recipients must be 18 years or older to receive therapy from Oliva.</SmallPrint>
-                        <SmallPrint>Offer valid for the UK and EU only.</SmallPrint>
-                        <SmallPrint>Oliva is not suitable for people in a crisis. Please see our website for helplines.</SmallPrint>
-                        <SmallPrint>Therapy sessions from this offer must be redeemed by March 31st 2021.</SmallPrint>
-                      </Fragment>
-                    }>
-                      terms of the offer
-                    </Tooltip>
-                  </SmallPrint>
-                  {isError && <div className={styles.errorMessage}><SmallPrint>We need you to agree to the terms.</SmallPrint></div>}
-                </div>
-                <Button isLoading={isLoading} role="link" onClick={handleClick}>
-                  Gift 3 sessions for £150
-                </Button>
+                {
+                  // <Quote />
+                }
+                <p>The Christmas 2020 offer is now closed.</p>
+                <p>You can see our standard pricing <a href="https://oliva.health/pricing">here</a>.</p>
+                {
+                //   <h2 className={styles.heading}>How it works:</h2>
+                // <div className={styles.list}>
+                //   <div>
+                //     <h2>1</h2>
+                //     <Paragraph>We'll send you a beautiful, festive gift card with a unique code. You can print or forward it to your friend or loved one.</Paragraph>
+                //   </div>
+                //   <div>
+                //     <h2>2</h2>
+                //     <Paragraph>
+                //       They can use the code to book their first session from January 1st. They'll start with a{' '}
+                //       <Tooltip content="The goal of the matching session is to find your friend the right therapist">
+                //         matching session
+                //       </Tooltip>
+                //       , then they'll have two one-hour therapy sessions via video call.
+                //     </Paragraph>
+                //   </div>
+                //   <div>
+                //     <h2>3</h2>
+                //     <Paragraph>Processing 2020 becomes much easier.</Paragraph>
+                //   </div>
+                // </div>
+                //
+                // <div className={styles.checkbox}>
+                //   <input name="legal" type="checkbox" checked={isChecked} onChange={handleChangeCheckbox} />
+                //   <SmallPrint>
+                //     I agree to the{' '}
+                //     <Tooltip content={
+                //       <Fragment>
+                //         <SmallPrint>Recipients must be 18 years or older to receive therapy from Oliva.</SmallPrint>
+                //         <SmallPrint>Offer valid for the UK and EU only.</SmallPrint>
+                //         <SmallPrint>Oliva is not suitable for people in a crisis. Please see our website for helplines.</SmallPrint>
+                //         <SmallPrint>Therapy sessions from this offer must be redeemed by March 31st 2021.</SmallPrint>
+                //       </Fragment>
+                //     }>
+                //       terms of the offer
+                //     </Tooltip>
+                //   </SmallPrint>
+                //   {isError && <div className={styles.errorMessage}><SmallPrint>We need you to agree to the terms.</SmallPrint></div>}
+                // </div>
+                // <Button isLoading={isLoading} role="link" onClick={handleClick}>
+                //   Gift 3 sessions for £150
+                // </Button>
+                }
                 <div className={styles.verticalSpacer}/>
               </Fragment>
           }
